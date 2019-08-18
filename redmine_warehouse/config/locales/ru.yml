@@ -1,0 +1,7 @@
+ru:
+  permission_index_products: Просмотр списка товаров
+  permission_create_products: Создание товара
+  permission_edit_products: Редактирование товара
+  permission_delete_products: Удаление товара
+
+  project_module_products: Товары для склада
