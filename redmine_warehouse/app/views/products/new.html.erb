@@ -1,0 +1,24 @@
+<div class="contextual">
+  <%= link_to l(:button_to_list), project_products_path(params[:project_id])  %>
+</div>
+<%= title l(:label_product_new) %>
+
+<%= labelled_form_for @product, :url => project_products_path(@project),
+                             :html => {:id => 'product-form'} do |f| %>
+  <%= error_messages_for 'product' %>
+ 
+  <div class="box tabular">
+    <div id="all_attributes">
+    <%= render :partial => 'products/form', :locals => {:f => f} %>
+    </div>
+
+    
+  </div>
+
+  <%= submit_tag l(:button_create) %>
+  
+<% end %>
+
+<% content_for :header_tags do %>
+    <%= robot_exclusion_tag %>
+<% end %>

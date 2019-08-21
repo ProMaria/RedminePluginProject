@@ -1,0 +1,29 @@
+<% if @products.present? %>
+  <div class="autoscroll">
+  <table class="list issue-report">    
+    <thead>
+      <tr>        
+        <th> <%= l(:label_product_new) %> </th>
+        <th> <%= l(:label_product_quantity) %> </th>
+        <th> <%= l(:label_product_cost) %>  </th>
+        <th> <%= l(:label_product_man_date) %>  </th>
+        <th> <%= l(:label_product_issue_name) %>  </th>
+        <th></th>
+      </tr>
+    </thead>    
+    <tbody>
+      <% @products.each_with_index do |product, index| %>
+  	    <tr>  	      
+  	      <td> <%= link_to product.name, project_product_path(id: product.id, project_id: params[:project_id]) %> </td>
+  	      <td> <%= product.quantity %> </td>
+  	      <td> <%= product.cost %> </td>
+  	      <td> <%= product.manufacture_date.present? ? product.manufacture_date.strftime('%d.%m.%Y') : 'не указана' %> </td>
+  	      <td> <%= link_to product.issue.subject, issue_path(product.issue_id) if product.issue_id.present?%> </td>
+          <td> <%= link_to l(:button_edit), edit_project_product_path(id: product.id,project_id: params[:project_id]), :onclick => 'showAndScrollTo("update", "product_notes"); return false;', :class => 'icon icon-edit', :accesskey => accesskey(:edit) %></td>
+  	    </tr>	
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+
+<% end %>    

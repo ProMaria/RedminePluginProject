@@ -1,0 +1,25 @@
+<div class="contextual">
+  <%= link_to l(:button_to_list), project_products_path(params[:project_id])  %>
+</div>
+<%= title l(:label_product_edit) %>
+
+<%= labelled_form_for @product, :url => product_path,
+                             :html => {:id => 'product-form', :method => :put} do |f| %>
+  <%= error_messages_for 'product' %>
+ 
+  <div class="box tabular">
+    <div id="all_attributes">
+    <%=hidden_field_tag :project_id, params[:project_id] %>
+    <%= render :partial => 'products/form', :locals => {:f => f} %>
+    </div>
+
+    
+  </div>
+
+  <%= submit_tag l(:button_edit) %>
+  
+<% end %>
+
+<% content_for :header_tags do %>
+    <%= robot_exclusion_tag %>
+<% end %>

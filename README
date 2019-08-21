@@ -1,1 +1,14 @@
-Put your Redmine plugins here.
+== Redmine plugin
+
+This is a plugin for Redmine. Plugin adds tab 'Product' to the project, adds products's link to projects's issue. Product's tab has CRUD operation with product
+
+== Installation
+
+1. Copy the plugin directory into the "plugins" directory at the root
+   of your Redmine directory
+
+2. Migrate and copy plugin assets:
+   bundle exec rake redmine:plugins:migrate
+
+3. Start Redmine
+4. Edit http://you.host.redmine/roles/permissions for plugin

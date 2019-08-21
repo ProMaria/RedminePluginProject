@@ -1,0 +1,10 @@
+<% if RedmineWarehouseProduct.where(issue_id: issue.id).present? %>    
+  <% links = [] %>
+  <% RedmineWarehouseProduct.where(issue_id: issue.id).each do |product| %>
+   	<% links << link_to(product.name, project_product_path(id: product.id, project_id: issue.project_id)) %>
+  <% end %>
+  
+  <%= issue_fields_rows do |rows|
+  rows.left l(:field_issue_list_product), safe_join(links, ', ')
+  end %>
+<% end %>

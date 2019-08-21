@@ -1,0 +1,7 @@
+<p><%= f.text_field :name, :required => true, :size => 60, :label => l(:label_product_name) %></p>
+<p><%= f.text_field :quantity, :cols => 60, :rows => 2,  :label => l(:label_product_quantity) %></p>
+<p><%= f.text_field :cost, :cols => 60, :rows => 2, :label => l(:label_product_cost) %></p>
+<p><%= f.date_field :manufacture_date, :cols => 60, :rows => 2, :label => l(:label_product_man_date) %></p>
+<p><%= f.select(:issue_id, @issues.collect{|i| [i.subject, i.id]}, {:include_blank => true}, {:selected => params[:issue_id]})%></p>
+
+

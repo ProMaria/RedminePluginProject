@@ -1,0 +1,8 @@
+<div class="contextual">
+<%= link_to l(:button_edit), edit_project_product_path(id: @product, project_id: params[:project_id]), :onclick => 'showAndScrollTo("update", "product_notes"); return false;', :class => 'icon icon-edit', :accesskey => accesskey(:edit)  %>
+
+<%= link_to l(:button_delete), product_path(id: @product, project_id: params[:project_id]), :method => :delete, :data => {:confirm => l(:product_destroy_confirmation, :name => "#{@product.name}")}, :class => 'icon icon-del'  %>
+
+<%= link_to l(:button_to_list), project_products_path(params[:project_id]), :class => 'icon icon-list'  %>
+<%= link_to l(:label_product_new),new_project_product_path(@project), :class => 'icon icon-add new-issue' %>
+</div>

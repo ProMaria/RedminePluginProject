@@ -1,0 +1,33 @@
+<%= render :partial => 'action_menu' %>
+<h2><%= @product.name %></h2>
+<div class="box tabular">
+<table>
+	<% unless @product.quantity.blank? %>
+		<tr>
+			<td><b><%= l(:label_product_quantity) %></b>:</td>
+			<td><%= @product.quantity %></td>
+		</tr>
+	<% end %>
+	<% unless @product.cost.blank? %>
+		<tr>
+			<td><b><%= l(:label_product_cost) %></b>:</td>
+			<td><%= @product.cost %></td>
+		</tr>
+	<% end %>
+	<% unless @product.manufacture_date.blank? %>
+		<tr>
+			<td><b><%= l(:label_product_man_date) %></b>:</td>
+			<td><%= @product.manufacture_date.strftime('%d.%m.%Y') %></td>
+		</tr>
+	<% end %>
+	<% unless @product.issue_id.blank? %>
+		<tr>
+			<td><b><%= l(:label_product_issue_name) %></b>:</td>
+			<td><%= link_to @product.issue.subject, issue_path(@product.issue_id) %></td>
+		</tr>
+	<% end %>
+</table>
+</div>
+
+
+

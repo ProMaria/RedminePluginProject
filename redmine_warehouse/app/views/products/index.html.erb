@@ -1,34 +1,9 @@
-<% if @products.present? %>
-  <div class="autoscroll">
-  <table>
-    <caption> Список товаров на складе </caption>
-    <thead>
-      <tr>
-        <th> № п/п </th>
-        <th> Наименование </th>
-        <th> Стоимость </th>
-        <th> Кол-во </th>
-        <th> Дата производства </th>
-        <th> Номер задачи </th>
-      </tr>
-    </thead>    
-    <tbody>
-      <% @products.each_with_index do |product, index| %>
-  	    <tr> 
-  	      <td> <%= index + 1 %> </td>
-  	      <td> <%= product.name %> </td>
-  	      <td> <%= product.quantity %> </td>
-  	      <td> <%= product.cost %> </td>
-  	      <td> <%= product.manufacture_date.present? ? product.manufacture_date.strftime('%d.%m.%Y') : 'не указана' %> </td>
-  	      <td> <%= product.ussue.tracker_id if product.issue.present?%> </td>
-  	    </tr>	
-      <% end %>
-    </tbody>
-  </table>
-  </div>
-<% else %>
-  <h3> товаров нет </h3>  
-<% end %>    
+<div class="contextual">
+ <%= link_to l(:label_product_new),new_project_product_path(@project), :class => 'icon icon-add new-issue' %>
+ </div>
+ <h2><%=l(:project_module_products)%></h2>
+
+<p><%= render :partial => 'list', :locals => {:products => @products} %></p>
 
 
 

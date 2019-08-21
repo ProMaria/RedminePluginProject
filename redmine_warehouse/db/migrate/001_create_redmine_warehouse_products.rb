@@ -5,9 +5,11 @@ class CreateRedmineWarehouseProducts < ActiveRecord::Migration[5.2]
       t.column :cost, :integer
       t.column :quantity, :integer
       t.column :manufacture_date, :date
-      t.column :issue_id, :integer, :null => false            
-    end
-    add_index :redmine_warehouse_products, :issue_id 
-    add_reference :issues, :redmine_warehouse_products, foreign_key: true   
+      t.column :issue_id, :integer            
+    end           
+  end
+
+  def self.down
+    drop_table :redmine_warehouse_products
   end
 end

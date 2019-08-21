@@ -1,7 +1,23 @@
 ru:
-  permission_index_products: Просмотр списка товаров
-  permission_create_products: Создание товара
-  permission_edit_products: Редактирование товара
-  permission_delete_products: Удаление товара
 
-  project_module_products: Товары для склада
+  permission_index_products: Просмотр списка товаров  
+  permission_create_products: управление товарами
+
+  project_module_products: Товары на складе
+  products_for_issue: Товары со склада
+  field_issue_list_product: Список товаров на складе
+  label_product_new: Новый товар
+  label_product_edit: Редактирование товара
+  notice_product_successful_create: Товар %{name} создан
+  product_destroy_confirmation: 'Вы уверены, что хотите удалить %{name} ?'
+  notice_product_successful_update: Товар %{name} изменен
+  notice_product_successful_destroy: Товар удален
+  
+  set_issue: Укажите номер задачи
+  button_to_list: К списку товаров
+  label_product_name: Наименование
+  label_product_issue_name: Задача
+  label_product_quantity: Кол-во
+  label_product_cost: Стоимость
+  label_product_man_date: Дата выпуска
+  

@@ -7,11 +7,10 @@ Redmine::Plugin.register :redmine_warehouse do
   author_url 'http://example.com/about'
 
   project_module :products do
-    permission :index_products, :products => :index
-    permission :create_products, :products => :create
-    permission :edit_products, :products => :edit
-    permission :delete_products, :products => :delete
+    permission :index_products, :products => [:index, :show]
+    permission :create_products, :products => [:create, :new, :edit, :update, :destroy]
   end
 
   menu :project_menu, :products, { :controller => 'products', :action => 'index'}, :last => true, :param => :project_id, :caption => 'Товары на складе'
+  require_dependency 'products_hook_listener'
 end

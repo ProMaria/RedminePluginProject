@@ -1,3 +1,22 @@
 # English strings go here for Rails i18n
 en:
-  # my_label: "My label"
+  permission_index_products: View list of products
+  permission_create_products: Create product
+  project_module_products: Warehous's product
+  products_for_issue: Product for issue
+  field_issue_list_product: List of product
+  label_product_new: New product
+  label_product_edit: Edit product
+  notice_product_successful_create: Product %{name} is successful create
+  product_destroy_confirmation: 'You shure to delete %{name} ?'
+  notice_product_successful_update: Product %{name} is successful update
+  notice_product_successful_destroy: Product is deleting
+  quantity: Quantity
+  set_issue: Issues number
+  button_to_list: To product's list
+  label_product_name: Name of product
+  label_product_issue_name: Name of issue
+  label_product_quantity: Quantity
+  label_product_cost: Cost
+  label_product_man_date: Date of manufacture
+  
